@@ -1,0 +1,22 @@
+.detail {
+  margin: 2rem;
+}
+
+.detail h1 {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.detail p:first-of-type {
+  text-align: center;
+}
+
+.detail img {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.detail p:last-of-type {
+  line-height: 1.6rem;
+  padding-bottom: 2rem;
+}
