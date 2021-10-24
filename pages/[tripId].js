@@ -1,11 +1,23 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 import ToptripDetails from "../components/toptrips/ToptripDetails";
 import { MongoClient, ObjectId } from "mongodb";
+import { Fragment } from "react";
 
 export default function ToptripDetailsPage(props) {
   const router = useRouter();
   const id = router.query.tripId;
-  return <ToptripDetails data={props.data}></ToptripDetails>;
+  return (
+    <Fragment>
+      <Head>
+        <title>{props.data.title}</title>
+        <meta name="description" content={`Detail about ${props.data.title}`} />
+        <meta name="keywords" content="Trip, travel, Australia" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <ToptripDetails data={props.data}></ToptripDetails>
+    </Fragment>
+  );
 }
 
 export async function getStaticPaths() {

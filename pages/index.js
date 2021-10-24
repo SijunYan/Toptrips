@@ -3,9 +3,20 @@ import ToptripList from "../components/toptrips/ToptripList";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/layout/Layout";
 import { MongoClient } from "mongodb";
+import { Fragment } from "react";
 
 export default function Home(props) {
-  return <ToptripList toptrips={props.data} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Toptrips Home Page</title>
+        <meta name="description" content="Top trips in Australia" />
+        <meta name="keywords" content="Trip, travel, Australia" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <ToptripList toptrips={props.data} />
+    </Fragment>
+  );
 }
 
 export async function getStaticProps({ params }) {
